@@ -3,10 +3,11 @@ from pathlib import Path
 import os
 import shutil
 import compileall
+import platform
 
 projectName = "Gcz_MobilePhone_Scrapy"  # 项目名
-edition = "1.0.0_beta"  # 版本号
-target = "./target"  # 输出路径
+edition = f"cpython-{platform.python_version().split('.')[0]}{platform.python_version().split('.')[1]}_1.0.0_beta"  # 版本号
+target = "Gcz_MobilePhone_Scrapy/target"  # 输出路径
 
 def package(root_path, reserve_one=False):
     """
@@ -24,9 +25,7 @@ def package(root_path, reserve_one=False):
     for src_file in root.rglob("__pycache__"):
         os.rmdir(src_file)
 
-    current_day = str(datetime.datetime.now()).replace(':', '_')  # 当前日期
-
-    dest = Path(root.parent / f"{target}/{projectName}_{edition}_{current_day}")  # 目标文件夹名称
+    dest = Path(root.parent / f"{target}/{projectName}_{edition}")  # 目标文件夹名称
 
     if os.path.exists(dest):
         shutil.rmtree(dest)
@@ -47,6 +46,18 @@ def package(root_path, reserve_one=False):
     for src_file in dest.rglob("*.py"):
         os.remove(src_file)
 
+    # 清除.idea
+    for src_file in dest.rglob(".idea"):
+        os.remove(src_file)
+
+    # 清除__pycache__
+    for src_file in dest.rglob("__pycache__"):
+        os.remove(src_file)
+
+    # 清除.git
+    for src_file in dest.rglob(".git"):
+        os.remove(src_file)
+
     # 清除源目录文件
     if reserve_one:
         if os.path.exists(root):
@@ -55,4 +66,4 @@ def package(root_path, reserve_one=False):
 
 
 if __name__ == '__main__':
-    package(root_path="Gcz_MobilePhone_Scrapy/", reserve_one=False)
+    package(root_path="../Gcz_MobilePhone_Scrapy/", reserve_one=False)

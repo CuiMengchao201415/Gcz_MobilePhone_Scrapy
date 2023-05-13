@@ -29,13 +29,16 @@ class ProcessUtil():
             tid = ctypes.c_long(process.ident).value
         if (type(tid) == Process):
             tid = ctypes.c_long(tid.ident).value
-        os.kill(tid, signal.SIGILL)
+        try:
+            os.kill(tid, signal.SIGILL)
+        except Exception as e:
+            print("结束进程失败！")
 
     def statement(self):
         statement = f'{self.__class__.__name__}\n' \
                     '作者: 梦辰雪（Cui Mengchao）\n' \
                     '版本号: v1.0.0\n' \
-                    '更新时间: 2023-05-10\n' \
+                    '更新时间: 2023-05-13\n' \
                     'gitee: https://gitee.com/mcxgitee\n'
         print(f'\033[1;33m{statement}\033[0m\n')
 

@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['setup.py'],
+a = Analysis(['start.py'],
              pathex=['./gcz_scrapy','./gcz_pyqt','./gcz_common', './resources'],
              binaries=[],
              datas=[],
