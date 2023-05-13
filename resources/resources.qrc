@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/jpg/bg.jpg</file>
+    <file>img/jpg/bg.jpg</file>
+    <file>img/ico/light_off.png</file>
+    <file>img/ico/light_on.png</file>
+    <file>img/png/logo.png</file>
+  </qresource>
+  <qresource prefix="qss">
+    <file>qss/main.qss</file>
+  </qresource>
+</RCC>

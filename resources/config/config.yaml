@@ -1,0 +1,24 @@
+file:
+  barFileName: bar_chart
+  csvPath: B:/Projects/Gcz_MobilePhone_Scrapy/resources/csv/
+  echartPath: B:/Projects/Gcz_MobilePhone_Scrapy/resources/html/
+  lineFileName: line_chart
+  phoneDataFileName: gcz_mobilephone
+  pieFileName: pie_chart
+log:
+  logLevel: WARNING
+  logPassword: "GCZ\u56FD\u7CB9\u7AE0\u7EC4"
+  logShow: true
+  statementShow: true
+scrapy:
+  maxPageNum: 20
+  pageScroll: 3
+  pageStep: 2
+  timeInterval: 1
+sql:
+  charset: utf8
+  database: gcz_mobilephone
+  host: localhost
+  password: root
+  port: 3306
+  user: root
