@@ -137,6 +137,11 @@ class HomeController:
 
 
 def analysePhonePricePieCount(data):
+    """
+    根据手机价格统计手机数量
+    :param data:
+    :return:
+    """
     count = {"低端机": 0, "中端机": 0, "高端机": 0}
     for item in data:
         try:
@@ -152,6 +157,12 @@ def analysePhonePricePieCount(data):
     return count
 
 def analysePhonePieCount(data, param):
+    """
+    根据商品某一属性统计商品数量
+    :param data:
+    :param param:
+    :return:
+    """
     count = {}
     for item in data:
         try:
@@ -175,6 +186,12 @@ def dictCountAdd1(data, key1, key2, value1):
 
 
 def analysePhonePriceCount(data, param="brond"):
+    """
+    根据商品价格和商标统计数量
+    :param data:
+    :param param:
+    :return:
+    """
     priceCount = {'0-999': 0, '1000-1999': 0, '2000-2999': 0, '3000-4999': 0, '5000-9999': 0, '1万+': 0}
     defaultPriceCount = {'0-999': 0, '1000-1999': 0, '2000-2999': 0, '3000-4999': 0, '5000-9999': 0, '1万+': 0}
     brondCount = {}
@@ -216,6 +233,12 @@ def analysePhonePriceCount(data, param="brond"):
     return priceCount, brondCount
 
 def analysePhoneCount(data, params=['brond', 'play_memory']):
+    """
+    根据商品任意两个属性统计商品数量
+    :param data:
+    :param params:
+    :return:
+    """
     count = {}
     defaultCount = {}
     if params[0] == 'brond': defaultCount = {'Apple': 0, '华为（HUAWEI）': 0, '小米（MI）': 0, '荣耀（HONOR）': 0, 'vivo': 0, 'OPPO': 0, '杂牌': 0}
@@ -246,6 +269,11 @@ def analysePhoneCount(data, params=['brond', 'play_memory']):
     return count
 
 def pie_set_colors(data):
+    """
+    生成饼状图
+    :param data:
+    :return:
+    """
     if type(data) == dict:
         data = [list(z) for z in zip(data.keys(), data.values())]
     pie = (
@@ -258,6 +286,11 @@ def pie_set_colors(data):
     pie.render(config.file.echartPath+config.file.pieFileName+".html")
 
 def bar_base_dict_config(data):
+    """
+    生成柱状图
+    :param data:
+    :return:
+    """
     if type(data) == dict:
         xaxis = list(data[list(data.keys())[0]].keys())
         yaxis = []
@@ -274,6 +307,11 @@ def bar_base_dict_config(data):
     bar.render(config.file.echartPath+config.file.barFileName+".html")
 
 def line_base(data):
+    """
+    生成折线图
+    :param data:
+    :return:
+    """
     if type(data) == dict:
         xaxis = list(data[list(data.keys())[0]].keys())
         yaxis = []

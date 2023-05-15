@@ -81,12 +81,10 @@ class SaveMySQLPipeline(object):
             self.db_cursor.execute(sql)
             self.db_cursor.execute(sql1)
         except:
-            print("数据库连接失败open_spider")
             spider.mysqlConn = False
 
     def process_item(self, item, spider):
         if not spider.mysqlConn:
-            print("无数据库process_item")
             return item
         #goods表
         values = (item['title'],item['price'],item['business'],item['evaluate'],item['image_url'],item['business_url'],item['brond'])
@@ -99,7 +97,6 @@ class SaveMySQLPipeline(object):
         return item
     def close_spider(self,spider):
         if not spider.mysqlConn:
-            print("无数据库close_spider")
             return
         self.db_conn.commit()
         self.db_cursor.close()
