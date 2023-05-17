@@ -54,31 +54,31 @@ class UIHomeView(QWidget, Ui_Form):
         # self.setStyleSheet(styleSheet)
 
         self.view = QWebEngineView(self.frame_8)
+        self.view.hide()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.view.sizePolicy().hasHeightForWidth())
         self.view.setSizePolicy(sizePolicy)
         self.gridLayout_3.addWidget(self.view, 0, 0, 1, 1)
-        self.label.close()
 
         self.view_2 = QWebEngineView(self.frame_8)
+        self.view_2.hide()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.view_2.sizePolicy().hasHeightForWidth())
         self.view_2.setSizePolicy(sizePolicy)
         self.gridLayout_7.addWidget(self.view_2, 0, 0, 1, 1)
-        self.label_3.close()
 
         self.view_3 = QWebEngineView(self.frame_8)
+        self.view_3.hide()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.view_3.sizePolicy().hasHeightForWidth())
         self.view_3.setSizePolicy(sizePolicy)
         self.gridLayout_4.addWidget(self.view_3, 0, 0, 1, 1)
-        self.label_4.close()
 
         self.tableWidget.horizontalHeader().setStyleSheet( "QHeaderView::section{background-color:rgb(155, 194, 230);font:11pt '宋体';color: black;};")
         self.tableWidget.verticalHeader().setStyleSheet( "QHeaderView::section{background-color:rgb(155, 194, 230);font:11pt '宋体';color: black;};")
@@ -110,23 +110,28 @@ class UIHomeView(QWidget, Ui_Form):
             value = data[key]
             self.setLightUI(charts[key], value)
 
-        self.setPyEchartUI()
-
-    def setPyEchartUI(self, data=[1, 2, 3]):
+    def setPyEchartUI(self, data):
         # 加载 html 文件并在 pyqt 窗口中显示
         fileUrl = config.file
         if 1 in data:
             pieurl = QUrl(f"file:///{fileUrl.echartPath}{fileUrl.pieFileName}.html")
             self.view.load(pieurl)
             self.view.setZoomFactor(0.5)
+            self.label.hide()
+            self.view.show()
+
         if 2 in data:
             barurl = QUrl(f"file:///{fileUrl.echartPath}{fileUrl.barFileName}.html")
             self.view_2.load(barurl)
             self.view_2.setZoomFactor(0.5)
+            self.label_3.hide()
+            self.view_2.show()
         if 3 in data:
             lineurl = QUrl(f"file:///{fileUrl.echartPath}{fileUrl.lineFileName}.html")
             self.view_3.load(lineurl)
             self.view_3.setZoomFactor(0.5)
+            self.label_4.hide()
+            self.view_3.show()
 
     def setTableUI(self, data):
         currentRowCount = self.tableWidget.rowCount()
@@ -136,6 +141,7 @@ class UIHomeView(QWidget, Ui_Form):
                 ','))
         for i in range(0, len(data)):
             self.tableWidget.setItem(currentRowCount, i, QTableWidgetItem(str(data[titleList[i]])))
+        self.tableWidget.scrollToBottom()
 
     def setLightUI(self, chart, params):
         index = 0
@@ -195,6 +201,14 @@ class UIHomeView(QWidget, Ui_Form):
         self.tableWidget.setStyleSheet("color: rgb(255, 255, 255);\n"
                                        "border: 0px;\n"
                                        "border-image: url(:/img/img/jpg/bg.jpg);")
+
+        self.label.show()
+        self.label_3.show()
+        self.label_4.show()
+
+        self.view.hide()
+        self.view_2.hide()
+        self.view_3.hide()
         if self.clearTablePBClickCallback:
             self.clearTablePBClickCallback()
 

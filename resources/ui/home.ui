@@ -355,7 +355,7 @@ border-image: url(:/img/img/jpg/bg.jpg);</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-image: url(:/img/img/png/echart.png);</string>
+            <string notr="true">border-image: url(:/img/img/jpg/bg.jpg);</string>
            </property>
            <property name="text">
             <string/>
@@ -404,7 +404,7 @@ border-image: url(:/img/img/jpg/bg.jpg);</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-image: url(:/img/img/png/echart.png);</string>
+            <string notr="true">border-image: url(:/img/img/jpg/bg.jpg);</string>
            </property>
            <property name="text">
             <string/>
@@ -453,7 +453,7 @@ border-image: url(:/img/img/jpg/bg.jpg);</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-image: url(:/img/img/png/echart.png);</string>
+            <string notr="true">border-image: url(:/img/img/jpg/bg.jpg);</string>
            </property>
            <property name="text">
             <string/>

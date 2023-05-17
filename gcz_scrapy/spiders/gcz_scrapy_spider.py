@@ -1,3 +1,5 @@
+import random
+
 from scrapy import Request
 from scrapy import Spider
 from selenium import webdriver
@@ -14,12 +16,10 @@ class GCZScrapySpider(Spider):
         self.driver = webdriver.Chrome()
 
         self.start_urls = []
-        i = 1
-        while i <= config.scrapy.maxPageNum:
+        for index in range(0, config.scrapy.maxPageNum):
+            i = random.randint(1, config.scrapy.maxPageNum*config.scrapy.pageStep)
             url = f'https://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&wq=%E6%89%8B%E6%9C%BA&pvid=8858151673f941e9b1a4d2c7214b2b52&page={i}'
             self.start_urls.append(url)
-            i += config.scrapy.pageStep
-
 
 
     def parse(self, response):
@@ -48,7 +48,7 @@ class GCZScrapySpider(Spider):
                 detail_url = '无'
             else:
                 detail_url = response.urljoin(detail_url[0])
-            self.printLog('详情页链接：',detail_url)
+            self.printLog('详情页链接：', detail_url)
 
             evaluate = one_selector.xpath('div/div[5]/strong/a/text()').extract()
             if evaluate == []:
@@ -81,13 +81,14 @@ class GCZScrapySpider(Spider):
             #跳转到详情页
             yield Request(detail_url,
                           meta={
-                              'item':item #定义一个key为item,然后将解析后的item值放置在这
-                          },callback=self.detailinfo_parse)
+                              'url': detail_url,
+                              'item':item.copy() #定义一个key为item,然后将解析后的item值放置在这
+                          }, callback=self.detailinfo_parse)
             # except:
             #     pass
     def detailinfo_parse(self,response):
         time.sleep(config.scrapy.timeInterval)
-        item = response.meta['item']
+        item = response.meta['item'].copy()
         title = response.xpath('//div[@class="itemInfo-wrap"]/div[@class="sku-name"]/text()').extract()
         if title == []:
             title = '无'

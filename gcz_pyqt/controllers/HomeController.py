@@ -72,7 +72,7 @@ class HomeController:
         else: self.process.stopProcess()
 
     def clearTablePBClickCallback(self):
-        self.original = None
+        self.original = []
 
     def loadLocalDataPBClickCallback(self):
         if not os.path.exists(f'{config.file.csvPath}{config.file.phoneDataFileName}.csv'):
