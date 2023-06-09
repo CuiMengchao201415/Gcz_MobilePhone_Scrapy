@@ -38,14 +38,18 @@ class Ui_Form(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
         self.pushButton_2.setGeometry(QtCore.QRect(260, 340, 151, 51))
         self.pushButton_2.setStyleSheet("border-image: None;\n"
-"background-color: rgb(175, 175, 175);\n"
-"color: rgb(255, 255, 255);")
+"border: 1px solid rgba(255, 255, 255,150);\n"
+"border-radius: 10px;\n"
+"background-color: rgba(47,74,101,125);\n"
+"color: rgba(255, 255, 255, 200);")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton = QtWidgets.QPushButton(self.frame)
         self.pushButton.setGeometry(QtCore.QRect(260, 430, 151, 51))
         self.pushButton.setStyleSheet("border-image: None;\n"
-"color: rgb(0, 0, 0);\n"
-"background-color: rgb(85, 255, 0);")
+"border: 1px solid rgba(255, 255, 255,150);\n"
+"border-radius: 10px;\n"
+"background-color: rgba(47,74,101,150);\n"
+"color: rgba(255, 255, 255, 200);")
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
 

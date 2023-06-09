@@ -2,8 +2,8 @@ import os
 
 import pymysql
 from PyQt5.QtWidgets import QWidget
-from config import config
-from views.setting import *
+from gcz_common.config import config
+from gcz_pyqt.views.setting import *
 
 
 class UISettingView(QWidget, Ui_Form):

@@ -673,7 +673,7 @@ background-color: rgb(47,74,101);
 border-radius: 5px;</string>
                  </property>
                  <property name="text">
-                  <string>生成图表</string>
+                  <string>生成饼图</string>
                  </property>
                 </widget>
                </item>
@@ -749,7 +749,7 @@ border-radius: 5px;</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>价位</string>
+                  <string>全部价位</string>
                  </property>
                 </widget>
                </item>
@@ -773,7 +773,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>品牌</string>
+                  <string>低端机</string>
                  </property>
                 </widget>
                </item>
@@ -833,7 +833,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>内存</string>
+                  <string>中端机</string>
                  </property>
                 </widget>
                </item>
@@ -857,7 +857,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>运存</string>
+                  <string>高端机</string>
                  </property>
                 </widget>
                </item>
@@ -1059,7 +1059,7 @@ background-color: rgb(47,74,101);
 border-radius: 5px;</string>
                  </property>
                  <property name="text">
-                  <string>生成图表</string>
+                  <string>生成柱状图</string>
                  </property>
                 </widget>
                </item>
@@ -1135,7 +1135,7 @@ border-radius: 5px;</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>价位</string>
+                  <string>价格-内存</string>
                  </property>
                 </widget>
                </item>
@@ -1159,7 +1159,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>品牌</string>
+                  <string>价格-运存</string>
                  </property>
                 </widget>
                </item>
@@ -1219,7 +1219,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>内存</string>
+                  <string>内存-价格</string>
                  </property>
                 </widget>
                </item>
@@ -1243,7 +1243,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>运存</string>
+                  <string>运存-价格</string>
                  </property>
                 </widget>
                </item>
@@ -1445,7 +1445,7 @@ background-color: rgb(47,74,101);
 border-radius: 5px;</string>
                  </property>
                  <property name="text">
-                  <string>生成图表</string>
+                  <string>生成散点图</string>
                  </property>
                 </widget>
                </item>
@@ -1521,7 +1521,7 @@ border-radius: 5px;</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>价位</string>
+                  <string>价格-内存</string>
                  </property>
                 </widget>
                </item>
@@ -1545,7 +1545,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>品牌</string>
+                  <string>价格-运存</string>
                  </property>
                 </widget>
                </item>
@@ -1605,7 +1605,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>内存</string>
+                  <string>内存-价格</string>
                  </property>
                 </widget>
                </item>
@@ -1629,7 +1629,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>运存</string>
+                  <string>运存-价格</string>
                  </property>
                 </widget>
                </item>

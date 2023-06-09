@@ -4,7 +4,7 @@ from scrapy import Request
 from scrapy import Spider
 from selenium import webdriver
 
-from config import config
+from gcz_common.config import config
 from gcz_scrapy.items import GCZScrapyItem
 import re
 import time

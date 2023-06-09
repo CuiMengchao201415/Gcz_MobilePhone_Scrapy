@@ -1,6 +1,6 @@
 import os
 import sys
-from views.UILauncherView import *
+from gcz_pyqt.views.UILauncherView import *
 
 class main:
     def __init__(self):

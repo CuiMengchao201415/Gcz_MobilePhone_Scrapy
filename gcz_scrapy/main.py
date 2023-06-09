@@ -6,7 +6,7 @@ from scrapy.crawler import CrawlerProcess, CrawlerRunner
 from twisted.internet import reactor
 from scrapy.utils.project import get_project_settings
 
-from spiders.gcz_scrapy_spider import GCZScrapySpider
+from gcz_scrapy.spiders.gcz_scrapy_spider import GCZScrapySpider
 
 def crawlerProcess(pipe):
     settings = get_project_settings()

@@ -1,8 +1,8 @@
 import os
 from PyQt5.QtWidgets import QWidget
-from views.launcher import *
-from controllers.HomeController import HomeController
-from views.UISettingView import UISettingView
+from gcz_pyqt.views.launcher import *
+from gcz_pyqt.controllers.HomeController import HomeController
+from gcz_pyqt.views.UISettingView import UISettingView
 
 class UILauncherView(QWidget, Ui_Form):
     def __init__(self):

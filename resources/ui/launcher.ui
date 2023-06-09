@@ -76,8 +76,10 @@
       </property>
       <property name="styleSheet">
        <string notr="true">border-image: None;
-background-color: rgb(175, 175, 175);
-color: rgb(255, 255, 255);</string>
+border: 1px solid rgba(255, 255, 255,150);
+border-radius: 10px;
+background-color: rgba(47,74,101,125);
+color: rgba(255, 255, 255, 200);</string>
       </property>
       <property name="text">
        <string>修改配置</string>
@@ -94,8 +96,10 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">border-image: None;
-color: rgb(0, 0, 0);
-background-color: rgb(85, 255, 0);</string>
+border: 1px solid rgba(255, 255, 255,150);
+border-radius: 10px;
+background-color: rgba(47,74,101,150);
+color: rgba(255, 255, 255, 200);</string>
       </property>
       <property name="text">
        <string>进入软件</string>

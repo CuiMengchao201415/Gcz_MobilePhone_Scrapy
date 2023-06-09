@@ -1,14 +1,15 @@
 import os
+import random
 import time
 
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem
 
-from config import config
+from gcz_common.config import config
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, QUrl
 
-from views.home import *
+from gcz_pyqt.views.home import *
 
 class UIHomeView(QWidget, Ui_Form):
     def __init__(self):
@@ -94,9 +95,9 @@ class UIHomeView(QWidget, Ui_Form):
         def initLightSlot(index):
             eval(f'self.light{index}_swich_PB').clicked.connect(lambda: self.createChartPBClick(index, eval(f'self.light{index}_swich_PB').text()))
             eval(f'self.light{index}_1_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 1, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_1_PB').text()}"))
-            eval(f'self.light{index}_2_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 2, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_1_PB').text()}"))
-            eval(f'self.light{index}_3_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 3, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_1_PB').text()}"))
-            eval(f'self.light{index}_4_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 4, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_1_PB').text()}"))
+            eval(f'self.light{index}_2_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 2, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_2_PB').text()}"))
+            eval(f'self.light{index}_3_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 3, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_3_PB').text()}"))
+            eval(f'self.light{index}_4_PB').clicked.connect(lambda: self.chartParamsPBClick(index, 4, f"{eval(f'self.light{index}_swich_PB').text()}_{eval(f'self.light{index}_4_PB').text()}"))
         for index in lis:
             initLightSlot(index)
 
@@ -144,23 +145,9 @@ class UIHomeView(QWidget, Ui_Form):
         self.tableWidget.scrollToBottom()
 
     def setLightUI(self, chart, params):
-        index = 0
         for i in range(1, 5):
-            if chart != 1:
-                statue = i in params[0:2]
-                if i == params[0]:
-                    index = 0
-                else:
-                    index = 1
-            else:
-                index = 0
-                statue = i == params
-            if statue:
-                if index:
-                    exec(f'self.light{chart}_{i}_PB.setStyleSheet("background-color: rgb(255,204,0);color: rgb(255, 255, 255);")')
-                else:
-                    exec(
-                        f'self.light{chart}_{i}_PB.setStyleSheet("background-color: rgb(153,204,0);color: rgb(255, 255, 255);")')
+            if i==params:
+                exec(f'self.light{chart}_{i}_PB.setStyleSheet("background-color: rgb({random.randint(153, 256)},{random.randint(200, 256)},{random.randint(0, 50)});color: rgb(255, 255, 255);")')
             else:
                 exec(f'self.light{chart}_{i}_PB.setStyleSheet("background-color: rgb(153,153,153);color: rgb(255, 255, 255);")')
     # endregion
